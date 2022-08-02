@@ -32,12 +32,12 @@
 {(if:visits &lt; 3)[[[向随机方向游动|a]]](if:visits &gt;= 3)[[[向选定方向游动|b]]]}
 </tw-passagedata><tw-passagedata pid="4" name="橙色滑梯" tags="" position="371,512" size="100,100">未渲染
 等待新牌打出</tw-passagedata><tw-passagedata pid="5" name="攀爬架" tags="" position="544,479" size="100,100">一条贯穿淘气堡的攀爬架，向着两个方向无限延伸。
-(nth: ($climb % 3)+1, &quot;脚下是大片的海洋球池&quot;, &quot;脚下是虚空&quot;, &quot;脚下是虚空&quot;)
+(nth: (($climb+60) % 3)+1, &quot;脚下是大片的海洋球池&quot;, &quot;脚下是虚空&quot;, &quot;脚下是虚空&quot;)
 
 {(if: (random: 0,5) is not 0)[
 (link-reveal-goto: &quot;向前&quot;, &quot;攀爬架&quot;)[(set:$climb to it + 1)]&lt;br&gt;
 (link-reveal-goto: &quot;向后&quot;, &quot;攀爬架&quot;)[(set:$climb to it - 1)]
-](else:)[(nth: ($climb % 3)+1, [[松手|海洋球池]], &quot;未渲染&quot;, &quot;未渲染&quot;)]}
+](else:)[(nth: (($climb+60) % 3)+1, [[松手|海洋球池]], &quot;未渲染&quot;, &quot;未渲染&quot;)]}
 </tw-passagedata><tw-passagedata pid="6" name="向下沉" tags="" position="80,587" size="100,100">未渲染
 等待新牌打出</tw-passagedata><tw-passagedata pid="7" name="a" tags="" position="187,647" size="100,100">未渲染
 等待新牌打出</tw-passagedata><tw-passagedata pid="8" name="b" tags="" position="300,626" size="100,100">未渲染
