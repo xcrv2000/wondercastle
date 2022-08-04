@@ -14,10 +14,10 @@
 而这一切，都将交给你们来建设。
 
 
-[[进入淘气堡|中枢1]]
+[[进入淘气堡|中枢蹦床]]
 
 私聊Mike以在任何一页留言
-在群里开团或取得胜利以获得新卡</tw-passagedata><tw-passagedata pid="2" name="中枢1" tags="" position="394,329" size="100,100">你掉在一个巨大的(text-style:&quot;buoy&quot;)[蹦床]上。
+在群里开团或取得胜利以获得新卡</tw-passagedata><tw-passagedata pid="2" name="中枢蹦床" tags="" position="394,329" size="100,100">你掉在一个巨大的(text-style:&quot;buoy&quot;)[蹦床]上。
 
 [[前往海洋球池|海洋球池]]
 [[跳上橙色滑梯|橙色滑梯]](set:$Marine_depth to 3)
@@ -31,20 +31,34 @@
 
 (link-reveal-goto: &quot;向上游&quot;, &quot;海洋球池&quot;)[(set:$Marine_depth to it - 1)]
 (link-reveal-goto: &quot;向下沉&quot;, &quot;海洋球池&quot;)[(set:$Marine_depth to it + 1)]
-{(if:$Marine_depth &lt; 3)[[[向随机方向游动|a]]](if:$Marine_depth &gt;= 3)[[[向选定方向游动|b]]]}
-[[调试用快捷通道|中枢1]]
+{(if:$Marine_depth &gt;= 1)[[[向随机方向游动|a]]](if:$Marine_depth &lt; 1)[[[向选定方向游动|b]]]}
+[[调试用快捷通道 to蹦床|中枢蹦床]]
 
-</tw-passagedata><tw-passagedata pid="4" name="橙色滑梯" tags="" position="371,512" size="100,100">未渲染
-等待新牌打出</tw-passagedata><tw-passagedata pid="5" name="攀爬架" tags="" position="544,479" size="100,100">一条贯穿淘气堡的攀爬架，向着两个方向无限延伸。{&lt;br&gt;
+</tw-passagedata><tw-passagedata pid="4" name="橙色滑梯" tags="" position="371,512" size="100,100">你沿着滑梯滑落
+滑落
+滑落
+
+[[滑落|橙色滑梯尾]]
+</tw-passagedata><tw-passagedata pid="5" name="攀爬架" tags="" position="544,479" size="100,100">一条贯穿淘气堡的攀爬架，向着两个方向无限延伸。{&lt;br&gt;
 (if:$Marine_seed is 1)[藤蔓缠绕在攀爬架上]}
-(nth: (($climb+60) % 3)+1, &quot;脚下是大片的海洋球池&quot;, &quot;脚下是虚空&quot;, &quot;脚下是虚空&quot;)
+(nth: (($climb+60) % 4)+1, &quot;脚下是硕大的蹦床&quot;,&quot;脚下是大片的海洋球池&quot;, &quot;脚下是一望无际的彩虹&quot;,&quot;脚下是虚空&quot;)
 
 {(if: (random: 0,10)+$Marine_seed &gt;1 )[
 (link-reveal-goto: &quot;向前&quot;, &quot;攀爬架&quot;)[(set:$climb to it + 1)]&lt;br&gt;
-(link-reveal-goto: &quot;向后&quot;, &quot;攀爬架&quot;)[(set:$climb to it - 1)]
-](else:)[(nth: (($climb+60) % 3)+1, [[松手|海洋球池]], &quot;未渲染&quot;, &quot;未渲染&quot;)]}
+(link-reveal-goto: &quot;向后&quot;, &quot;攀爬架&quot;)[(set:$climb to it - 1)]&lt;br&gt;
+
+](nth: (($climb+60) % 4)+1, [[松手|中枢蹦床]], [[松手|海洋球池]], [[松手|彩虹桥]],未渲染&lt;br&gt;等待新牌打出)}
 </tw-passagedata><tw-passagedata pid="6" name="a" tags="" position="187,647" size="100,100">未渲染
 等待新牌打出</tw-passagedata><tw-passagedata pid="7" name="b" tags="" position="300,626" size="100,100">未渲染
+等待新牌打出</tw-passagedata><tw-passagedata pid="8" name="彩虹桥" tags="" position="544,629" size="100,100">由金粉铺设而成的一道彩虹。巨人雕像在彩虹的一端矗立着。
+
+
+[[向雕像前进|彩虹桥头]]
+[[远离雕像前进|彩虹桥尾]]
+[[从桥上跳下|彩虹桥下]] 备注：需要未渲染的条件</tw-passagedata><tw-passagedata pid="9" name="彩虹桥头" tags="" position="459,802" size="100,100">未渲染
+等待新牌打出</tw-passagedata><tw-passagedata pid="10" name="彩虹桥尾" tags="" position="699,765" size="100,100">未渲染
+等待新牌打出</tw-passagedata><tw-passagedata pid="11" name="橙色滑梯尾" tags="" position="420,662" size="100,100">未渲染
+等待新牌打出</tw-passagedata><tw-passagedata pid="12" name="彩虹桥下" tags="" position="577,778" size="100,100">未渲染
 等待新牌打出</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">"use strict";var _slicedToArray=function(){return function(e,t){if(Array.isArray(e))return e;if(Symbol.iterator in Object(e))return function(e,t){var n=[],r=!0,a=!1,i=void 0;try{for(var o,s=e[Symbol.iterator]();!(r=(o=s.next()).done)&&(n.push(o.value),!t||n.length!==t);r=!0);}catch(e){a=!0,i=e}finally{try{!r&&s.return&&s.return()}finally{if(a)throw i}}return n}(e,t);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}!function(){
 /**
