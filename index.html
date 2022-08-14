@@ -47,8 +47,7 @@
 {(if: (random: 0,10)+$Marine_seed &gt;1 )[
 (link-reveal-goto: &quot;向前&quot;, &quot;攀爬架&quot;)[(set:$climb to it + 1)]&lt;br&gt;
 (link-reveal-goto: &quot;向后&quot;, &quot;攀爬架&quot;)[(set:$climb to it - 1)]&lt;br&gt;
-
-](nth: (($climb+60) % 5)+1 ,[[松手|淘气煲]],[[松手|中枢蹦床]], [[松手|海洋球池]], [[松手|彩虹桥]],&quot;未渲染&lt;br&gt;等待新牌打出&quot;)}
+](else:)[你时失手，从攀爬架上掉了下去。]&lt;br&gt;(nth: (($climb+60) % 5)+1 ,[[松手|淘气煲]],[[松手|中枢蹦床]], [[松手|海洋球池]], [[松手|彩虹桥]],&quot;未渲染&lt;br&gt;等待新牌打出&quot;)}
 </tw-passagedata><tw-passagedata pid="6" name="a" tags="" position="187,647" size="100,100">未渲染
 等待新牌打出</tw-passagedata><tw-passagedata pid="7" name="b" tags="" position="300,626" size="100,100">未渲染
 等待新牌打出</tw-passagedata><tw-passagedata pid="8" name="彩虹桥" tags="" position="544,629" size="100,100">由金粉铺设而成的一道彩虹。巨人雕像在彩虹的一端矗立着。
